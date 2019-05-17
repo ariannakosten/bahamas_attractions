@@ -36,6 +36,8 @@ class CLI
   def print_all_attractions
     Attractions.all.each.with_index(1) do |att, index|
       puts "#{index}. #{att.name}"
+      puts "-----------------------------------------------"
+      puts "#{att.description}"
     end
   end
   
