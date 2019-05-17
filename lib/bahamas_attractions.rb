@@ -9,6 +9,8 @@ require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
-require_relative '../lib/cli'
-require_relative '../lib/attractions'
-require_relative '../lib/scraper'
+require_relative '.bahamas_attractions/cli.rb'
+require_relative '.bahamas_attractions/attractions.rb'
+require_relative '.bahamas_attractions/scraper.rb'
+
+#.. goes back one level - . stay in this level

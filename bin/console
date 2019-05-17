@@ -16,6 +16,8 @@ IRB.start(__FILE__)
 
 #EXECUTABLE FILE
 
+#instantiate a new CLI and call the run method
+
 require_relative '../lib/bahamas_attractions'
 
 CLI.new.run
