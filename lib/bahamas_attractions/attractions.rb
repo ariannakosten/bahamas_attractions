@@ -15,4 +15,8 @@ class Attractions
   def self.all
     @@all
   end
+  
+  def make_attractions
+    
+  end
 end
