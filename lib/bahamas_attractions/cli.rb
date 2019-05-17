@@ -42,7 +42,8 @@ class CLI
   end
   
   def print_single_choice(scraper_single_attraction)
-    puts "#{attraction.name.upcase}"
+    puts "#{attraction.name.upcase}"  #can i center this - do i need gems like colorize for this project
+    puts "-------------------------------------------------"
     puts ""
     puts "Catagory: #{attraction.catagories}"
     puts ""
