@@ -7,7 +7,11 @@ class Bahamas_Attractions::CLI
   end
 
   def start
-    puts ""
+    input = ""
+    while input != "exit" do
+    puts "Which attraction would you like to see details on?"
+    puts "Please enter the number of the attraction or type 'exit' to exit."
+    input = gets.strip
   end
 end
   
