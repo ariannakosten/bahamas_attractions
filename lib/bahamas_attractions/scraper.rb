@@ -6,7 +6,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
     doc.css("attractions-attraction-overview-main-PoiGrid__wrapper--3t2QY").each do |attraction|
       attraction = Attraction.new
-      attraction_title = 
+      attraction.title = att.css("a")".attractions-attraction-overview-main-PoiInfo__name--378VB"
       
   
   
