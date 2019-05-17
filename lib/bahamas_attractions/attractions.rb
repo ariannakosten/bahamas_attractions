@@ -16,8 +16,13 @@ class Attractions
   def self.all
     @@all
   end
-  
-  def make_attractions
+
+  def sort_by_price
     
   end
+  
+  def sort_by_catagories
+  
+ end
+
 end

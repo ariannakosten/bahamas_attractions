@@ -21,5 +21,12 @@ class Scraper
     
   end
   
+  def scrape_catagories
+  
+  end
+  
+  def scrape_prices
+  
+  end
 
 end

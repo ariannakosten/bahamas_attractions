@@ -47,7 +47,7 @@ class CLI
     puts "Description:"
     puts "#{attraction.description}"
     puts ""
-    puts "Price: #{attraction.price}" #if no price dont include this--apply to all of these
+    puts "Price: #{attraction.price}"       #if no price dont include this--apply to all of these
     puts ""
     puts "Reviews:"
     puts ""
