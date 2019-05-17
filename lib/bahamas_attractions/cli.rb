@@ -12,7 +12,7 @@ class Bahamas_Attractions::CLI
     end
   end
   
-  def scrape_attractions
+  def print_attractions
     Attractions.all.each.with_index(1) do |att, index|
       puts "#{index}. #{att.name}"
     end
