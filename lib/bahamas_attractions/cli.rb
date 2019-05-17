@@ -2,7 +2,7 @@ class CLI
 
   def call
       welcome
-      Scraper.scrape_attractions
+      Scraper.scrape_all_attractions
       print_all_attractions
       start_list
   end
