@@ -1,17 +1,18 @@
 class Bahamas_Attractions::CLI
 
-  def call
-    Bahamas_attractions::Scraper.new.make_attractions
-    puts "Welcome to the Top Attractions in the Bahamas!"
-    start
-  end
-
-  def start
-    input = ""
+  def run
+      puts "Welcome to the Top Attractions in the Bahamas!"
+    Bahamas_attractions::Scraper.scrape_attractions
+     print_attractions
+      input = ""
     while input != "exit" do
-    puts "Which attraction would you like to see details on?"
-    puts "Please enter the number of the attraction or type 'exit' to exit."
-    input = gets.strip
+      puts "Which attraction would you like to see details on?"
+      puts "Please enter the number of the attraction or type 'exit' to exit."
+      input = gets.strip
+    end
+  end
+  
+  def scrape_attractions
   end
 end
   
