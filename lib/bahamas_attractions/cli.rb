@@ -1,4 +1,4 @@
-class Bahamas_Attractions::CLI
+class CLI
 
   def run
       welcome
@@ -32,6 +32,21 @@ class Bahamas_Attractions::CLI
   end
 end
   
- 
+  def print_single_choice(attraction)
+    puts "#{attraction.name.upcase}"
+    puts ""
+    puts "Catagory: #{attraction.catagories}"
+    puts ""
+    puts "Description:"
+    puts "#{attraction.description}"
+    puts ""
+    puts "Price: #{attraction.price}"
+    puts ""
+    puts "Reviews:"
+    puts ""
+    puts "#{attraction.reviews}"
+  end 
+  
+end
  
      

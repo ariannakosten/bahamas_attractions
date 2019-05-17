@@ -1,14 +1,15 @@
 class Attractions
   
-  attr_accessor :name, :reviews, :catagories, :price
+  attr_accessor :name, :reviews, :catagories, :price, :description
   
   @@all = []
   
-  def initialize(name=nil, reviews=nil, catagories=nil, price=nil)
+  def initialize(name=nil, reviews=nil, catagories=nil, price=nil, description=nil)
     @name = name
     @reviews = reviews
     @catagories = catagories
     @price = price
+    @description = description
     @@all << self
   end
   
