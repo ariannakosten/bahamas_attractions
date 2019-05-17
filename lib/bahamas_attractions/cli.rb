@@ -3,6 +3,7 @@ class CLI
   def call
       welcome
       Scraper.scrape_all_attractions
+      binding.pry
       print_all_attractions
       start_list
   end
@@ -22,8 +23,8 @@ class CLI
       
       input = gets.strip.downcase
       #if input is a number and less than that #of attractions but > 0
-       if input = input.to_i && input < Attractions.all.length && input > 0 
-        Scraper.single_attraction_scraper(attractions)             #do i need a test variable here
+       if input = input.to_i && input < Attraction.all.length && input > 0 
+        Scraper.single_attraction_scraper(attractions)             #do i need a test variable here like an if
         print_single_choice(scraper_single_attraction)
       elsif input == "list"
         print_attractions
@@ -34,10 +35,11 @@ class CLI
   end
   
   def print_all_attractions
-    Attractions.all.each.with_index(1) do |att, index|
+    Attraction.all.each.with_index(1) do |att, index|
       puts "#{index}. #{att.name}"
       puts "-----------------------------------------------"
       puts "#{att.description}"
+      puts "              "
     end
   end
   
