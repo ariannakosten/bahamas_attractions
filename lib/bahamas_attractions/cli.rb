@@ -1,14 +1,27 @@
 class Bahamas_Attractions::CLI
 
   def run
-      puts "Welcome to the Top Attractions in the Bahamas!"
-    Bahamas_attractions::Scraper.scrape_attractions
-     print_attractions
-      input = ""
+      welcome
+      Scraper.scrape_attractions
+      print_attractions
+      start_list
+  end
+  
+   def welcome
+    puts ""
+    puts "Welcome to the Top Attractions in the Bahamas!"
+    puts "Which attraction would you like to see details on first?"
+  end
+  
+  def start_list
+    input = ""
+    
     while input != "exit" do
-      puts "Which attraction would you like to see details on?"
-      puts "Please enter the number of the attraction or type 'exit' to exit."
-      input = gets.strip
+      puts "Please enter the number located next to the attraction you are interested in: "
+      puts "To see the entire list of attractions again, please type 'list'." 
+      puts "Otherwise, to exit just type 'exit'!"
+      
+      input = gets.strip.downcase
     end
   end
   
@@ -19,3 +32,6 @@ class Bahamas_Attractions::CLI
   end
 end
   
+ 
+ 
+     
