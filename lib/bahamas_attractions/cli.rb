@@ -16,8 +16,8 @@ class CLI
     puts ""
     puts "Simply enter the number located next to the attraction you are interested in: ".colorize(:blue)
     puts ""
-    puts "´¨`*•.¸¸.•*´¨`*• ATTRACTIONS¸.•*´¨`*•.¸¸.•*´¨`"
-    puts "-----------------------------------------------".colorize(:light_blue)
+    puts "´¨`*•.¸¸.•*´¨`*• ATTRACTIONS¸.•*´¨`*•.¸¸.•*´¨`".colorize(:light_cyan)
+    puts "-----------------------------------------------".colorize(:light_cyan)
 
   end
   
@@ -43,7 +43,7 @@ class CLI
   
   def print_all_attractions
     Attraction.all.each.with_index(1) do |att, index|
-      puts "#{index}. #{att.name}".colorize(:light_cyan)
+      puts "#{index}. #{att.name}".colorize(:light_blue)
       puts "-----------------------------------------------".colorize(:light_blue)
     end
   end
