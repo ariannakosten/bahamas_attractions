@@ -3,7 +3,7 @@ class CLI
   def call
       welcome
       Scraper.scrape_all_attractions
-      #binding.pry
+                                        #binding.pry
       print_all_attractions
       start_list
   end
@@ -49,16 +49,11 @@ class CLI
   
   # if line: if input is a number and less than that of attractions but > 0  if input = input.to_i && input < Attraction.all.length && input > 0  #if input < Attraction.all.length && input > 0
  
-  
-  
-  
-      
       # if (1..50).include?(input.to_i)
       #   single_movie = Movie.alphabetized_list[input.to_i-1]
       #   Scraper.scrape_single_movie(single_movie) if !single_movie.runtime
       #   print_single_movie(single_movie)
     
-  
   def print_all_attractions
     Attraction.all.each.with_index(1) do |att, index|
       puts "#{index}. #{att.name}".colorize(:light_blue)
@@ -67,6 +62,9 @@ class CLI
   end
   
   def print_single_choice(scraper_single_attraction)
+    input = ""
+    while input != "exit" do
+      input = gets.strip.downcase
     puts "-------------------------------------------------".colorize(:red)
     puts "#{attraction.name.upcase}".colorize(:red)
     puts "-------------------------------------------------".colorize(:red)
@@ -77,14 +75,27 @@ class CLI
     puts "Description:".colorize(:white)
     puts "#{attraction.description}".colorize(:magenta)
     puts "-------------------------------------------------".colorize(:white)
-    puts "Rating:".colorize(:white) "#{attraction.rating} out of 5 stars!".colorize(:magenta)
+    puts "Rating:".colorize(:white) + "#{attraction.rating} out of 5 stars!".colorize(:magenta)
     puts "-------------------------------------------------".colorize(:white)
-    puts "Price:".colorize(:white) "#{attraction.price}".colorize(:magenta)      
+    puts "Price:".colorize(:white) + "#{attraction.price}".colorize(:magenta)      
     puts "-------------------------------------------------".colorize(:blue)
     puts ""
-    puts "Want to see a different attraction? Type 'list' to view the attractions again.".colorize(:red) #these lines need to run to loop back - otherwise stuck
+    puts "Want to see a different attraction? Type 'list' to view the attractions again.".colorize(:red) #these lines need to run to loop back - otherwise stuck vvv
     puts "Otherwise type 'exit', to exit".colorize(:red)
+    
+    if input == "list"
+      print_all_attractions
+    elsif input != "exit"
+      puts "Invalid action, please type 'list' to view all attractions or 'exit' to exit"
+      end
+    end
   end
+  
 end
- 
+
+# case input
+#     when input == "list"
+#       print_all_attractions
+#     when input != "exit"
+#       puts "Invalid action, please type 'list' to view all attractions or 'exit' to exit"
      
