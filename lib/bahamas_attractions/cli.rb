@@ -18,9 +18,14 @@ class CLI
     puts ""
     puts "Otherwise type 'exit, to exit.".colorize(:blue)
     puts ""
-    puts "´¨`*•.¸¸.•*´¨`*• ATTRACTIONS¸.•*´¨`*•.¸¸.•*´¨`".colorize(:magenta)
+    puts "´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
+    
+    puts "´¨`*•.¸¸.•*´¨`*• ATTRACTIONS¸.•*´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
+    
+    puts "´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
     puts ""
     puts "-----------------------------------------------".colorize(:light_blue)
+    
   end
   
   def start_list
@@ -32,18 +37,18 @@ class CLI
       #this is where i tell it to grab one attraction and open the page that #prints single choice
       
       if (1..30).include?(input.to_i)  
-        attraction = Attraction.all.sort {|a, b| a.name <=> b.name}[input.to_i -1]        #<< or [input -1]
+        attraction = Attraction.all.sort {|a, b| a.name <=> b.name}[input.to_i -1]        #<< or [input -1] # may need to sort in attractions file?
         Scraper.single_attraction_scraper(attraction) #if !attraction.catagory            #<< do i need a test variable here like an if? or "if attraction"
         list_single_attraction(attraction)
       elsif input == "list"
         puts "Enter the number located next to the attraction you would like details on: "
         print_all_attractions
       elsif input != "exit"
-        puts "Oh no, it looks like that is not a valid response, please enter a valid option.".colorize(:magenta)
+        puts "Oh no, it looks like that is not a valid response, please enter a valid option.".colorize(:light_magenta)
         puts ""
-        puts "You can type 'list' to see the entire list of attractions again.".colorize(:magenta)
+        puts "You can type 'list' to see the entire list of attractions again.".colorize(:light_magenta)
       puts ""
-      puts "Otherwise, if you'd like to exit just type 'exit'.".colorize(:magenta)
+      puts "Otherwise, if you'd like to exit just type 'exit'.".colorize(:light_magenta)
       end
     end    
   end
