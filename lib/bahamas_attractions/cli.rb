@@ -16,8 +16,10 @@ class CLI
     puts ""
     puts "Simply enter the number located next to the attraction you are interested in: ".colorize(:blue)
     puts ""
+    puts ""
     puts "´¨`*•.¸¸.•*´¨`*• ATTRACTIONS¸.•*´¨`*•.¸¸.•*´¨`".colorize(:light_cyan)
-    puts "-----------------------------------------------".colorize(:light_cyan)
+    puts ""
+    puts "-----------------------------------------------".colorize(:light_blue)
 
   end
   
