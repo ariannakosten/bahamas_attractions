@@ -34,7 +34,7 @@ class CLI
     input = ""
     while input != "exit" do
       
-      input = gets.strip.downcase
+      input = gets.strip.downcase         #.downcase
       
       #this is where i tell it to grab one attraction and open the page that #prints single choice
       
@@ -48,7 +48,7 @@ class CLI
       elsif input != "exit"
         puts "Oh no, it looks like that is not a valid response, please enter a valid option.".colorize(:light_magenta)
         puts ""
-        puts "You can type 'list' to see the entire list of attractions again.".colorize(:light_magenta)
+        puts "Please type 'list' to see the entire list of attractions again.".colorize(:light_magenta)
       puts ""
       puts "Otherwise, if you'd like to exit just type 'exit'.".colorize(:light_magenta)
         #print_all_attractions
