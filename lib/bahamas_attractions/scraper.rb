@@ -1,10 +1,8 @@
 class Scraper
   
   def self.scrape_all_attractions
+    doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g147414-Activities-Bahamas.html"))
   
-    html = open("https://www.tripadvisor.com/Attractions-g147414-Activities-Bahamas.html")
-    doc = Nokogiri::HTML(html)
- 
     doc.css(".attractions-attraction-overview-main-PoiGrid__wrapper--3t2QY li").each do |att|
         #binding.pry
       name = att.css("a")[0].css("img").attr("alt").value
@@ -16,14 +14,13 @@ class Scraper
   end
   
   def self.single_attraction_scraper(attraction)
-    html = open("https://www.tripadvisor.com/#{attraction.url}")
-    doc = Nokogiri::HTML(html)
+    doc = Nokogiri::HTML(open("https://www.tripadvisor.com/#{attraction.url}"))
+
       #attraction.name
       # attraction.description = 
       # attraction.reviews =
       # attraction.catagories = 
       # attraction.price =
-    end
   end
  
 

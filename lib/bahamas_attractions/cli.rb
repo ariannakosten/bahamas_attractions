@@ -39,8 +39,8 @@ class CLI
       #this is where i tell it to grab one attraction and open the page that #prints single choice
       
       if (1..30).include?(input.to_i)  
-        attraction = Attraction.all.sort {|a, b| a.name <=> b.name}[input.to_i -1]        #<< or [input -1] # may need to sort in attractions file?
-        Scraper.single_attraction_scraper(attraction) #if !attraction.catagory            #<< do i need a test variable here like an if? or "if attraction"
+        attraction = Attraction.all           #.sort {|a, b| a.name <=> b.name}[input.to_i -1]        #<< or [input -1] # may need to sort in attractions file?
+        Scraper.single_attraction_scraper(attraction) if attraction     #if !attraction.catagory            #<< do i need a test variable here like an if? or "if attraction"
         list_single_attraction(attraction)
       elsif input == "list"
         puts "Enter the number located next to the attraction you would like details on: "
