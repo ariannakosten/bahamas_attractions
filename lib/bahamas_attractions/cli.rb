@@ -8,6 +8,8 @@ class CLI
       start_list
   end
   
+  #may want it to have welcome line then start list then ask for input
+  
    def welcome
     puts ""
     puts "Welcome to the Top Attractions in the Bahamas!".colorize(:blue)
