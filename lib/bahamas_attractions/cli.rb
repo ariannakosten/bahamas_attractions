@@ -19,9 +19,9 @@ class CLI
     puts "Otherwise type 'exit, to exit.".colorize(:blue)
     puts ""
     puts "´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
-    
-    puts "´¨`*•.¸¸.•*´¨`*• ATTRACTIONS¸.•*´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
-    
+    puts ""
+    puts "                ATTRACTIONS".colorize(:light_blue)
+    puts ""
     puts "´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
     puts ""
     puts "-----------------------------------------------".colorize(:light_blue)
@@ -49,6 +49,7 @@ class CLI
         puts "You can type 'list' to see the entire list of attractions again.".colorize(:light_magenta)
       puts ""
       puts "Otherwise, if you'd like to exit just type 'exit'.".colorize(:light_magenta)
+        #print_all_attractions
       end
     end    
   end
@@ -89,8 +90,10 @@ class CLI
     puts "Price:".colorize(:white) + "#{attraction.price}".colorize(:magenta)      
     puts "-------------------------------------------------".colorize(:blue)
     puts ""
-    puts "Want to see a different attraction? Type 'list' to view the attractions again.".colorize(:red) #these lines need to run to loop back - otherwise stuck vvv
+    puts "Want to see a different attraction? Type 'list' to view the attractions again.".colorize(:red) 
     puts "Otherwise type 'exit', to exit".colorize(:red)
+    
+    #these lines need to run to loop back - otherwise stuck vvv
     
     if input == "list"
       print_all_attractions
@@ -101,6 +104,20 @@ class CLI
   end
   
 end
+    #ALTS
+    #   puts "Want to see a different attraction? Enter 'Y' for yes or 'N' for no".colorize(:red) 
+    # input = gets.strip.downcase
+    # if input == "y"
+    #   print_all_attractions
+    # elsif input == "n"
+    #   puts ""
+    #   puts "Thanks for looking! Goodbye!".colorize(:red) 
+    #   exit
+    # else
+    #   puts ""
+    #   puts "Invalid action...reloading.".colorize(:red) 
+    #   print_all_attractions
+    # end
 
 #   case input
 #     when input == "list"
