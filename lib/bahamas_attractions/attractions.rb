@@ -1,6 +1,6 @@
 class Attraction
   
-  attr_accessor :name, :reviews, :catagories, :price, :description, :url
+  attr_accessor :name, :rating, :catagory, :price, :description, :url
   
   @@all = []
   
@@ -12,13 +12,5 @@ class Attraction
   def self.all
     @@all
   end
-
-  def sort_by_price
-    
-  end
-  
-  def sort_by_catagories
-  
- end
 
 end
