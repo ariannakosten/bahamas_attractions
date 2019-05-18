@@ -30,10 +30,11 @@ class CLI
       input = gets.strip.downcase
       
       #this is where i tell it to grab one attraction and open the page that #prints single choice
+      
       if (1..30).include?(input.to_i)  
-        song = Attraction.all.sort {|a, b| a.name <=> b.name}[input.to_i -1]
-        Scraper.single_attraction_scraper(attractions)             #do i need a test variable here like an if
-        print_single_choice(scraper_single_attraction)
+        attraction = Attraction.all.sort {|a, b| a.name <=> b.name}[input.to_i -1]        #<< or [input -1]
+        Scraper.single_attraction_scraper(attraction) #if !attraction.catagory            #<< do i need a test variable here like an if? or "if attraction"
+        list_single_attraction(attraction)
       elsif input == "list"
         puts "Enter the number located next to the attraction you would like details on: "
         print_all_attractions
@@ -48,11 +49,14 @@ class CLI
   end
   
   # if line: if input is a number and less than that of attractions but > 0  if input = input.to_i && input < Attraction.all.length && input > 0  #if input < Attraction.all.length && input > 0
- 
-      # if (1..50).include?(input.to_i)
-      #   single_movie = Movie.alphabetized_list[input.to_i-1]
-      #   Scraper.scrape_single_movie(single_movie) if !single_movie.runtime
-      #   print_single_movie(single_movie)
+  
+    # def play_song
+    #   input = gets.strip.to_i 
+    #   if input < Song.all.length && input > 0
+    #   song = Song.all.sort {|a, b| a.name <=> b.name}[input -1]
+    #   end
+    #     puts "Playing #{song.name} by #{song.artist.name}" if song
+    # end
     
   def print_all_attractions
     Attraction.all.each.with_index(1) do |att, index|
@@ -61,7 +65,7 @@ class CLI
     end
   end
   
-  def print_single_choice(scraper_single_attraction)
+  def list_single_attraction(attraction)
     input = ""
     while input != "exit" do
       input = gets.strip.downcase
@@ -93,7 +97,7 @@ class CLI
   
 end
 
-# case input
+#   case input
 #     when input == "list"
 #       print_all_attractions
 #     when input != "exit"

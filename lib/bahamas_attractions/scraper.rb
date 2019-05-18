@@ -26,13 +26,6 @@ class Scraper
       # attraction.price =
     end
   end
-  
-  def self.scrape_catagories  #scrape prices and be able to select attractions based on a price range (sort_by)
-  
-  end
-  
-  def self.scrape_prices   #scrape prices and be able to select attractions based on a price range (sort_by)
-  
-  end
+ 
 
 end

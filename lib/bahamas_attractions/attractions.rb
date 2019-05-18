@@ -12,5 +12,4 @@ class Attraction
   def self.all
     @@all
   end
-
 end
