@@ -3,25 +3,32 @@ class CLI
   def call
       welcome
       Scraper.scrape_all_attractions
-      binding.pry
+      #binding.pry
       print_all_attractions
       start_list
   end
   
    def welcome
     puts ""
-    puts "Welcome to the Top Attractions in the Bahamas!"
-    puts "Which attraction would you like to see details on first?"
+    puts "Welcome to the Top Attractions in the Bahamas!".colorize(:blue)
+    puts ""
+    puts "Which attraction would you like to see details on first?".colorize(:blue)
+    puts ""
+    puts "Simply enter the number located next to the attraction you are interested in: ".colorize(:blue)
+    puts ""
+    puts "´¨`*•.¸¸.•*´¨`*• ATTRACTIONS¸.•*´¨`*•.¸¸.•*´¨`"
+    puts "-----------------------------------------------".colorize(:light_blue)
+
   end
   
   def start_list
     input = ""
     while input != "exit" do
-      puts "Please enter the number located next to the attraction you are interested in: "
-      puts "To see the entire list of attractions again, please type 'list'." 
-      puts "Otherwise, to exit just type 'exit'!"
-      
+      puts "To see the entire list of attractions again, please type 'list'.".colorize(:blue)
+      puts ""
+      puts "Otherwise, to exit just type 'exit'!".colorize(:blue)
       input = gets.strip.downcase
+    
       #if input is a number and less than that #of attractions but > 0
        if input = input.to_i && input < Attraction.all.length && input > 0 
         Scraper.single_attraction_scraper(attractions)             #do i need a test variable here like an if
@@ -36,10 +43,8 @@ class CLI
   
   def print_all_attractions
     Attraction.all.each.with_index(1) do |att, index|
-      puts "#{index}. #{att.name}"
-      puts "-----------------------------------------------"
-      puts "#{att.description}"
-      puts "              "
+      puts "#{index}. #{att.name}".colorize(:light_cyan)
+      puts "-----------------------------------------------".colorize(:light_blue)
     end
   end
   

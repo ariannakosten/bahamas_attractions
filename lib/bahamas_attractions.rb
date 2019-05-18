@@ -1,6 +1,7 @@
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 require_relative './bahamas_attractions/version'
 require_relative './bahamas_attractions/cli'
