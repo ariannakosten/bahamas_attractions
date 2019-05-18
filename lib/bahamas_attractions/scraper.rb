@@ -16,10 +16,9 @@ class Scraper
   end
   
   def self.single_attraction_scraper(attraction)
-    html = open("https://www.tripadvisor.com/")
+    html = open("https://www.tripadvisor.com/#{attraction.url}")
     doc = Nokogiri::HTML(html)
-    doc.css("attractions-attraction-overview-main-PoiGrid__wrapper--3t2QY").each do |att|
-      attraction.name = att.css(".attractions-attraction-overview-main-PoiInfo__name--378VB")
+      #attraction.name
       # attraction.description = 
       # attraction.reviews =
       # attraction.catagories = 
