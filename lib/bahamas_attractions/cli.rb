@@ -4,7 +4,7 @@ class CLI
       welcome
       Scraper.scrape_all_attractions
                                         #binding.pry
-      print_all_attractions
+      Attraction.print_all_attractions
       start_list
   end
   
@@ -34,14 +34,16 @@ class CLI
     input = ""
     while input != "exit" do
       
-      input = gets.strip.downcase         #.downcase
+      input = gets.strip.downcase        #.downcase
       
       #this is where i tell it to grab one attraction and open the page that #prints single choice
       
       if (1..30).include?(input.to_i)  
-        attraction = Attraction.all           #.sort {|a, b| a.name <=> b.name}[input.to_i -1]        #<< or [input -1] # may need to sort in attractions file?
-        Scraper.single_attraction_scraper(attraction) if attraction     #if !attraction.catagory            #<< do i need a test variable here like an if? or "if attraction"
-        list_single_attraction(attraction)
+        
+        Attraction.find_attraction(input.to_i)
+        #call method that returns 1 specific attraction
+        #call method that will fetch the data of that one single attraction Scraper.single_attraction_scraper(attraction)
+        #list_single_attraction(attraction)
       elsif input == "list"
         puts "Enter the number located next to the attraction you would like details on: "
         print_all_attractions
@@ -66,12 +68,7 @@ class CLI
     #     puts "Playing #{song.name} by #{song.artist.name}" if song
     # end
     
-  def print_all_attractions
-    Attraction.all.each.with_index(1) do |att, index|
-    puts "#{index}. #{att.name}".colorize(:light_blue)
-    puts "-----------------------------------------------".colorize(:light_blue)
-    end
-  end
+  
   
   def list_single_attraction(attraction)
     input = ""
