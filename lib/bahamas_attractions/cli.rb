@@ -49,8 +49,8 @@ class CLI
         puts "Oh no, it looks like that is not a valid response, please enter a valid option.".colorize(:light_magenta)
         puts ""
         puts "Please type 'list' to see the entire list of attractions again.".colorize(:light_magenta)
-      puts ""
-      puts "Otherwise, if you'd like to exit just type 'exit'.".colorize(:light_magenta)
+        puts ""
+        puts "Otherwise, if you'd like to exit just type 'exit'.".colorize(:light_magenta)
         #print_all_attractions
       end
     end    
@@ -68,8 +68,8 @@ class CLI
     
   def print_all_attractions
     Attraction.all.each.with_index(1) do |att, index|
-      puts "#{index}. #{att.name}".colorize(:light_blue)
-      puts "-----------------------------------------------".colorize(:light_blue)
+    puts "#{index}. #{att.name}".colorize(:light_blue)
+    puts "-----------------------------------------------".colorize(:light_blue)
     end
   end
   

@@ -11,7 +11,6 @@ class Scraper
       url = att.css("a")[0].attr("href")
       attraction.url = url
     end
-    #binding.pry
   end
   
   def self.single_attraction_scraper(attraction)
