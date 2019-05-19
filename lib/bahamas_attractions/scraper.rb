@@ -14,10 +14,9 @@ class Scraper
   
   def self.single_attraction_scraper(attraction)
 
+    binding.pry
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com#{attraction.url}"))
-    #binding.pry
-      #attraction.name
-      # attraction.descriptio = 
+      # attraction.description = 
       # attraction.reviews =
       # attraction.catagories = 
       # attraction.price =

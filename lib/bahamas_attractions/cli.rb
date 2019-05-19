@@ -40,9 +40,12 @@ class CLI
       
       if (1..30).include?(input.to_i)  
         
-        Attraction.find_attraction(input.to_i)
-        #call method that returns 1 specific attraction
-        #call method that will fetch the data of that one single attraction Scraper.single_attraction_scraper(attraction)
+        attraction = Attraction.find_attraction(input.to_i)
+        Scraper.single_attraction_scraper(attraction)
+        #Attraction.display_attraction(attraction)
+        puts "Want to see a different attraction? Type 'list' to view the attractions again.".colorize(:red) 
+        puts "Otherwise type 'exit', to exit".colorize(:red)
+    
         #list_single_attraction(attraction)
       elsif input == "list"
         puts "Enter the number located next to the attraction you would like details on: "
