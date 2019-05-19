@@ -5,7 +5,7 @@ class Attraction
   @@all = []
   
   def initialize(name, url, index)
-    @name, @url, @index = name, url, index
+    @name, @url, @index = name, url, index    #<---- INDEX +1 ?
     @@all << self
   end
   
