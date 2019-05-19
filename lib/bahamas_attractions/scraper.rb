@@ -16,11 +16,12 @@ class Scraper
 
     #binding.pry
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com#{attraction.url}"))
-      binding.pry
+      #binding.pry
       # attraction.catagory = 
       # attraction.description = 
       # attraction.rating =
-      # attraction.price =
+      binding.pry
+       attraction.price = doc.css("div.attractions-multi-tour-module-MultiTourOffer__offer_price_box--2dNgu .fromPrice")[0].text
   end
  
 

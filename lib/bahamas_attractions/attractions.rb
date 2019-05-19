@@ -37,7 +37,7 @@ class Attraction
     puts "---------------------------------------------------------------------------".colorize(:white)
     puts "Rating:".colorize(:white) + "#{attraction.rating} out of 5 stars!".colorize(:magenta)
     puts "---------------------------------------------------------------------------".colorize(:white)
-    puts "Price:".colorize(:white) + "#{attraction.price}".colorize(:magenta)      
+    puts "Price: ".colorize(:white) + "#{attraction.price}".colorize(:magenta)      
     puts "---------------------------------------------------------------------------".colorize(:white)
     puts ""
   end

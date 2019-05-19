@@ -9,6 +9,12 @@ class CLI
   
   def welcome
     puts ""
+    puts "             ´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
+    puts ""
+    puts "                          BAHAMAS ATTRACTIONS!".colorize(:light_blue)
+    puts ""
+    puts "             ´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
+    puts ""
     puts "               Welcome to the Top Attractions in the Bahamas!".colorize(:blue)
     puts ""
     puts "          Which attraction would you like to see details on first?".colorize(:blue)
@@ -16,12 +22,6 @@ class CLI
     puts "  Please enter the number located next to the attraction you are interested in.".colorize(:blue)
     puts ""
     puts "                     Otherwise type 'exit, to exit.".colorize(:blue)
-    puts ""
-    puts "            ´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
-    puts ""
-    puts "                             ATTRACTIONS".colorize(:light_blue)
-    puts ""
-    puts "            ´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
     puts ""
     puts "---------------------------------------------------------------------------".colorize(:light_blue)
   end
