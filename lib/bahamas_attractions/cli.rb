@@ -30,7 +30,7 @@ class CLI
     input = ""
       while input != "exit" do
         input = gets.strip.downcase       
-                                                #NOT PUTTING OUT THE RIGHT NUMBER WITH ATTRACTION
+                                                
       if (1..30).include?(input.to_i)                           
         
         attraction = Attraction.find_attraction(input.to_i)

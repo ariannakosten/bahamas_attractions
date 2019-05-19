@@ -5,14 +5,14 @@ class Attraction
   @@all = []
   
   def initialize(name, url, index)
-    @name, @url, @index = name, url, index    #<---- INDEX +1 ?
+    @name, @url, @index = name, url, index    
     @@all << self
   end
   
   #create method that searches all attractions and returns one
   
   def self.find_attraction(i)
-    self.all.find{|att| att.index = i}
+    self.all.find{|att| att.index == i}
   end
   
   def self.all
