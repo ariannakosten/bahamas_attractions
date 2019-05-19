@@ -27,14 +27,15 @@ class CLI
     puts "´¨`*•.¸¸.•*´¨`*•.•*´¨`*•.¸¸.•*´¨´¨`*•.¸¸.•*´¨`".colorize(:light_blue)
     puts ""
     puts "-----------------------------------------------".colorize(:light_blue)
-    
   end
   
   def start_list
+    
     input = ""
+    
     while input != "exit" do
       
-      input = gets.strip.downcase        #.downcase
+      input = gets.strip.downcase       
       
       #this is where i tell it to grab one attraction and open the page that #prints single choice
       
@@ -73,53 +74,7 @@ class CLI
     
   
   
-  def list_single_attraction(attraction)
-    input = ""
-    while input != "exit" do
-      input = gets.strip.downcase
-    puts "-------------------------------------------------".colorize(:red)
-    puts "#{attraction.name.upcase}".colorize(:red)
-    puts "-------------------------------------------------".colorize(:red)
-    puts ""
-    puts "-------------------------------------------------".colorize(:white)
-    puts "Catagory:".colorize(:white) + "#{attraction.catagory}".colorize(:magenta)
-    puts "-------------------------------------------------".colorize(:white)
-    puts "Description:".colorize(:white)
-    puts "#{attraction.description}".colorize(:magenta)
-    puts "-------------------------------------------------".colorize(:white)
-    puts "Rating:".colorize(:white) + "#{attraction.rating} out of 5 stars!".colorize(:magenta)
-    puts "-------------------------------------------------".colorize(:white)
-    puts "Price:".colorize(:white) + "#{attraction.price}".colorize(:magenta)      
-    puts "-------------------------------------------------".colorize(:blue)
-    puts ""
-    puts "Want to see a different attraction? Type 'list' to view the attractions again.".colorize(:red) 
-    puts "Otherwise type 'exit', to exit".colorize(:red)
-    
-    #these lines need to run to loop back - otherwise stuck vvv
-    
-    if input == "list"
-      print_all_attractions
-    elsif input != "exit"
-      puts "Invalid action, please type 'list' to view all attractions or 'exit' to exit"
-      end
-    end
-  end
-  
-end
-    #ALTS
-    #   puts "Want to see a different attraction? Enter 'Y' for yes or 'N' for no".colorize(:red) 
-    # input = gets.strip.downcase
-    # if input == "y"
-    #   print_all_attractions
-    # elsif input == "n"
-    #   puts ""
-    #   puts "Thanks for looking! Goodbye!".colorize(:red) 
-    #   exit
-    # else
-    #   puts ""
-    #   puts "Invalid action...reloading.".colorize(:red) 
-    #   print_all_attractions
-    # end
+ 
 
 #   case input
 #     when input == "list"
