@@ -27,18 +27,18 @@ class Attraction
   end
   
   def self.display_attraction(attraction)
-    puts "---------------------------------------------------------------------------".colorize(:white)
-    puts "#{attraction.name.upcase}".colorize(:magenta)
-    puts "---------------------------------------------------------------------------".colorize(:white)
+    puts "--------------------------------------------------------------------------------".colorize(:white)
+    puts "                       ~#{attraction.name.upcase}~".colorize(:magenta)
+    puts "--------------------------------------------------------------------------------".colorize(:white)
     puts "Catagory: ".colorize(:white) + "#{attraction.catagory}".colorize(:magenta)
-    puts "---------------------------------------------------------------------------".colorize(:white)
+    puts "--------------------------------------------------------------------------------".colorize(:white)
     puts "Description:".colorize(:white)
     puts "#{attraction.description}".colorize(:magenta)
-    puts "---------------------------------------------------------------------------".colorize(:white)
+    puts "--------------------------------------------------------------------------------".colorize(:white)
     puts "Rating: ".colorize(:white) + "#{attraction.rating} out of 5 stars!".colorize(:magenta)
-    puts "---------------------------------------------------------------------------".colorize(:white)
+    puts "--------------------------------------------------------------------------------".colorize(:white)
     puts "Price: ".colorize(:white) + "#{attraction.price}".colorize(:magenta)      
-    puts "---------------------------------------------------------------------------".colorize(:white)
+    puts "--------------------------------------------------------------------------------".colorize(:white)
     puts ""
   end
   
