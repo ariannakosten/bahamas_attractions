@@ -5,13 +5,17 @@ This Ruby Gem provides a CLI to view the Top 30 Attractions in the Bahamas as su
 
 ## Installation
 
-Clone this file from git then execute the following line in terminal: 
+1. Clone this file from git then execute the following line in terminal: 
 
     git clone git@github.com:ariannakosten/bahamas_attractions.git
+    
+2. Change the directory by entering:
 
-And then to run, type:
+     cd bahamas_attractions
 
-    ruby bin/run
+3. Now run the CLI! Enter:
+
+     ruby bin/run
 
 ## Contributing
 
