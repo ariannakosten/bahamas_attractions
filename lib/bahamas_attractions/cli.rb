@@ -3,7 +3,7 @@ class CLI
   def run
       welcome
       Scraper.scrape_all_attractions
-      Attraction.print_all_attractions
+      print_all_attractions
       start_selection
   end
   
@@ -17,11 +17,7 @@ class CLI
     puts ""
     puts "               Welcome to the Top Attractions in the Bahamas!"
     puts ""
-    puts "          Which attraction would you like to see details on first?"
-    puts ""
-    puts "  Please enter the number located next to the attraction you are interested in."
-    puts ""
-    puts "                     Otherwise type 'exit, to exit."
+             
     puts ""
     puts "---------------------------------------------------------------------------".colorize(:light_blue)
   end
@@ -35,7 +31,7 @@ class CLI
         
         attraction = Attraction.find_attraction(input.to_i)
         Scraper.single_attraction_scraper(attraction)
-        Attraction.display_attraction(attraction)
+        display_attraction(attraction)
         
         # puts "Want to see the attraction in your browser? Type 'view' to view."
         puts ""
@@ -54,7 +50,7 @@ class CLI
         puts ""
         puts "          Otherwise, if you'd like to exit just type 'exit'."
         puts "---------------------------------------------------------------------------".colorize(:blue)
-        Attraction.print_all_attractions
+       print_all_attractions
       elsif input != "exit"
         puts "-------------------------------------------------------------------------------"
         puts "Oh no, it looks like that is not a valid response, please enter a valid option.".colorize(:red)
@@ -65,6 +61,34 @@ class CLI
         puts "-------------------------------------------------------------------------------"
       end
     end    
+  end
+  
+   def print_all_attractions
+    Attraction.all.each do |att|
+      puts "#{att.index}. #{att.name}".colorize(:light_blue)
+      puts "---------------------------------------------------------------------------".colorize(:light_blue)
+    end
+    puts "Which attraction would you like to see details on first?"
+    puts ""
+    puts "  Please enter the number located next to the attraction you are interested in."
+    puts ""
+    puts "                     Otherwise type 'exit, to exit."
+  end
+  
+  def display_attraction(attraction)
+    puts "--------------------------------------------------------------------------------"
+    puts "Attraction:" + "  #{attraction.name.upcase}".colorize(:light_magenta)
+    puts "--------------------------------------------------------------------------------"
+    puts "Catagory: " + "#{attraction.catagory}".colorize(:light_magenta)
+    puts "--------------------------------------------------------------------------------"
+    puts "Description:"
+    puts "#{attraction.description}".colorize(:light_magenta)
+    puts "--------------------------------------------------------------------------------"
+    puts "Rating: " + "#{attraction.rating} out of 5 stars!".colorize(:light_magenta)
+    puts "--------------------------------------------------------------------------------"
+    puts "Price: " + "#{attraction.price}".colorize(:light_magenta)      
+    puts "--------------------------------------------------------------------------------"
+    puts ""
   end
 end
     
